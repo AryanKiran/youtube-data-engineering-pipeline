@@ -6,7 +6,7 @@ The implementation uses a **Bronze → Silver → Gold** medallion layout. AWS S
 
 ## Architecture
 
-![YouTube Data Pipeline Architecture](assets/youtube-data-pipeline-architecture.png)
+![YouTube Data Pipeline Architecture](assests/youtube-data-pipeline-architecture.png)
 
 ## What the pipeline does
 
@@ -348,7 +348,7 @@ The Standard state machine completed with all displayed states marked `Succeeded
 
 The observed end-to-end execution duration was approximately **6 minutes**.
 
-![Successful Step Functions execution showing all pipeline stages succeeded](assets/step-functions-success.png)
+![Successful Step Functions execution showing all pipeline stages succeeded](assests/step-functions-success.png)
 
 ### Data quality result
 
@@ -395,17 +395,6 @@ The pipeline was executed again and the Gold table counts remained unchanged:
 
 This is a useful repeatability check and is consistent with the region-partition replacement strategy. Matching row counts alone do not prove that every field in every row is identical; a record-level comparison or checksum would provide stronger evidence.
 
-### Gold Glue job configuration evidence
-
-The Gold Glue job was configured with Glue 5.0, Python 3, and the expected database and bucket arguments.
-
-![Gold Glue job parameters](assets/gold-glue-job-parameters.png)
-
-### Step Functions configuration evidence
-
-The state machine is configured as a Standard workflow with CloudWatch logging set to `ALL` and the project execution role.
-
-![Step Functions configuration](assets/step-functions-configuration.png)
 
 ## Athena queries
 
@@ -519,7 +508,6 @@ Do not commit Lambda deployment ZIPs, credentials, `.env` files, AWS account-spe
 
 ## Reference
 
-- [YouTube Data Pipeline tutorial repository by Darshil Parmar](https://github.com/darshilparmar/youtube-data-piepline-aws-s3-lambda-glue-athena-stepfunction)
 - [YouTube Data API v3 documentation](https://developers.google.com/youtube/v3)
 - [AWS Step Functions documentation](https://docs.aws.amazon.com/step-functions/)
 - [AWS Glue documentation](https://docs.aws.amazon.com/glue/)
