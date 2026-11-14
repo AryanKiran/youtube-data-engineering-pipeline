@@ -1,0 +1,15 @@
+# Historical datasets
+data/*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# AWS account-specific configuration
+scripts/information.md
+stepFunction/pipeline_orchestration.json
